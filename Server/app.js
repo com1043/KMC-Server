@@ -12,6 +12,7 @@ const port = 3001;
 // routes
 const userRouter = require('./routes/user');
 const boardRouter = require('./routes/board');
+const authRouter = require('./routes/auth');
 
 /*
  * bodyparser.json() - body로 넘어온 데이터를 JSON 객체로 변환
@@ -52,6 +53,7 @@ app.use(morgan('dev'));
 
 app.use('/user', userRouter);
 app.use('/board', boardRouter);
+app.use('/auth', authRouter);
 
 app.set('port', port);
 app.listen(app.get('port'), () => {
